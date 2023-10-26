@@ -40,12 +40,19 @@ export default function ChatDetails({ navigation }) {
             <Text style={styles.subText}>Online</Text>
           </View>
         </View>
-        <Image
-          style={styles.callIcon}
-          source={require("../assets/Call_Icon.png")}
-        />
+
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate("CallScreen"); // Chuyển hướng sang màn hình ChatDetails
+          }}
+        >
+          <Image
+            style={styles.callIcon}
+            source={require("../assets/Call_Icon.png")}
+          />
+        </TouchableOpacity>
       </View>
-      <View >
+      <View>
         <View style={styles.chatGroupAsk}>
           <View style={styles.chatRetangleAsk}>
             <Text style={styles.chatText}>Just to order</Text>
@@ -53,7 +60,9 @@ export default function ChatDetails({ navigation }) {
         </View>
         <View style={styles.chatGroupRe}>
           <View style={styles.chatRetangleRe}>
-            <Text style={styles.chatTextRe}>Okay, for what level of spiciness?</Text>
+            <Text style={styles.chatTextRe}>
+              Okay, for what level of spiciness?
+            </Text>
           </View>
         </View>
         <View style={styles.chatGroupAsk}>
@@ -63,7 +72,7 @@ export default function ChatDetails({ navigation }) {
         </View>
         <View style={styles.chatGroupRe}>
           <View style={styles.chatRetangleRe}>
-            <Text style={styles.chatTextRe}>Okay I'm waiting  👍 </Text>
+            <Text style={styles.chatTextRe}>Okay I'm waiting 👍 </Text>
           </View>
         </View>
       </View>
